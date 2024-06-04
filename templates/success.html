@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='success.css') }}">
+</head>
+<body class="success">
+    {% if username %}
+        <h1>Welcome, {{ username }}!</h1>
+        <p>You have successfully registered or signed in.</p>
+        
+        <h2>Your Profile Details</h2>
+        <p>Username: {{ user.username }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Gender: {{ user.gender }}</p>
+        <p>Date of Birth: {{ user.birthdate }}</p>
+        <p>Year: {{ user.year }}</p>
+        <p>Branch: {{ user.branch }}</p>
+        <p>Degree: {{ user.degree }}</p>
+<h2>Bio</h2>
+        <form action="/save_bio" method="post">
+             <textarea id="bio" name="bio" rows="4" cols="10" placeholder="Write something about yourself...">{{ user.bio }}</textarea>
+             <button type="submit">Save Bio</button>
+        </form>
+
+        <h2>View Users with Similar Preferences</h2>
+        <form action="/view_users" method="post">
+            <label for="preferred_year">Preferred Year:</label>
+            <select id="preferred_year" name="preferred_year" required>
+                <option value="1">1st Year</option>
+                <option value="2">2nd Year</option>
+                <option value="3">3rd Year</option>
+                <option value="4">4th Year</option>
+            </select>
+
+            <label for="preferred_branch">Preferred Branch:</label>
+            <select id="preferred_branch" name="preferred_branch" required>
+                <option value="CSE">Computer Science</option>
+                <option value="ECE">Electronics and Communication</option>
+                <option value="ME">Mechanical Engineering</option>
+                <option value="CE">Civil Engineering</option>
+                <!-- Add more branches as needed -->
+            </select>
+
+            <label for="preferred_gender">Preferred Gender:</label>
+            <select id="preferred_gender" name="preferred_gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <button type="submit">View Users</button>
+        </form>
+
+        <!-- Link to Viewed Users -->
+        <h2>Viewed Users</h2>
+        <a href="/viewed_users">View Users You Have Seen</a>
+
+    {% else %}
+        <h1>Success!</h1>
+        <p>You have successfully registered or signed in.</p>
+    {% endif %}
+    
+    <a href="/">Back to Home</a>
+</body>
+</html>

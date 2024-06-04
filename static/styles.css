@@ -1,0 +1,133 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+}
+body.signin-failed {
+    background-image: url("fail.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+    width:100vw;
+}
+
+body.dating-app {
+    background-image: url("pi.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+body.success {
+    background-image: url("im.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width:100vw
+}
+body.view_users {
+    background-image: url("doubt.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+    width:100vw;
+}
+/* Add this to your viewed_users.css file */
+
+body.viewed_users {
+    background-image: url("doubt.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
+    margin: 0;
+}
+
+.center-container {
+    width: 80%; /* Adjust the width as needed */
+}
+
+table {
+    margin-top: 20px; /* Adjust the margin as needed */
+    width: 100%; /* Make the table span the full width of its container */
+    box-sizing: border-box; /* Include padding and border in the total width/height */
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Forms */
+form {
+    margin-bottom: 20px;
+    text-align: left;
+    display: inline-block;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+input[type="date"],
+button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Messages and Links */
+h2 {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+#bio {
+    border-radius: 10px; /* Adjust the value as needed for the desired roundness */
+    padding: 8px; /* Add padding for better aesthetics */
+    width: 100%; /* Make the textarea span the full width of its container */
+    box-sizing: border-box; /* Include padding and border in the total width/height */
+    resize: none; /* Disable textarea resizing */
+}
+
+
+
+

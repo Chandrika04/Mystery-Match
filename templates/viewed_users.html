@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viewed Users</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='viewed_users.css') }}">
+</head>
+<body class="viewed_users">
+    <div class="center-container">
+        <h1>Viewed Users</h1>
+        {% if viewed_users %}
+            <table border="1">
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Date of Birth</th>
+                    <th>Year</th>
+                    <th>Branch</th>
+                    <th>Degree</th>
+                </tr>
+                {% for viewed_user in viewed_users %}
+                    <tr>
+                        <td>{{ viewed_user.username }}</td>
+                        <td>{{ viewed_user.email }}</td>
+                        <td>{{ viewed_user.gender }}</td>
+                        <td>{{ viewed_user.birthdate }}</td>
+                        <td>{{ viewed_user.year }}</td>
+                        <td>{{ viewed_user.branch }}</td>
+                        <td>{{ viewed_user.degree }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No viewed users yet.</p>
+        {% endif %}
+    </div>
+    <a href="/">Back to Home</a>
+</body>
+</html>

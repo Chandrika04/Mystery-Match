@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Users</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='view_users.css') }}">
+</head>
+<body class="view_users">
+    <h1>Randomly Selected User</h1>
+
+    {% if random_user %}
+        <p>
+            Username: {{ random_user[1] }}</p>
+           <p> Year: {{ random_user[6] }} </p>
+            <p>Branch: {{ random_user[7] }} </p>
+            Degree: {{ random_user[8] }}</p>
+        </p>
+        {% if random_user[9] %}
+            <p>Bio: {{ random_user[9] }}</p>
+        {% endif %}
+    {% else %}
+        <p>No users match the specified preferences.</p>
+    {% endif %}
+
+    <a href="/">Back to Home</a>
+</body>
+</html>

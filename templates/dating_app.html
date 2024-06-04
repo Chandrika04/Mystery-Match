@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dating App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dating_app.css') }}">
+</head>
+<body class="dating-app">
+    <section id="registration">
+        <h2>Create Your Profile</h2>
+        <form action="/register" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            
+            <label for="birthdate">Date of Birth:</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+
+            <!-- New Fields for Preferences -->
+            <label for="year">Year:</label>
+            <select id="year" name="year" required>
+                <option value="1">1st Year</option>
+                <option value="2">2nd Year</option>
+                <option value="3">3rd Year</option>
+                <option value="4">4th Year</option>
+            </select>
+
+            <label for="branch">Branch:</label>
+            <select id="branch" name="branch" required>
+                <option value="CSE">Computer Science</option>
+                <option value="ECE">Electronics and Communication</option>
+                <option value="ME">Mechanical Engineering</option>
+                <option value="CE">Civil Engineering</option>
+                <!-- Add more branches as needed -->
+            </select>
+
+            <label for="degree">Degree:</label>
+            <input type="text" id="degree" name="degree" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </section>
+
+    <section id="signin">
+        <h2>Sign In</h2>
+        <form action="/signin" method="post">
+            <label for="signin-username">Username:</label>
+            <input type="text" id="signin-username" name="signin-username" required>
+
+            <label for="signin-password">Password:</label>
+            <input type="password" id="signin-password" name="signin-password" required>
+
+            <button type="submit">Sign In</button>
+        </form>
+    </section>
+</body>
+</html>
